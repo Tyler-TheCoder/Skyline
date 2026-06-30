@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Skyline</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <main class="page">
+
+    <header class="masthead">
+      <span class="masthead__mark">SKYLINE</span>
+      <span class="masthead__sub">current conditions, plotted forward</span>
+    </header>
+
+    <section class="search">
+      <input
+        type="text"
+        id="locationInput"
+        class="search__input"
+        placeholder="Enter a city, zip, or coordinates"
+        autocomplete="off"
+      />
+      <div class="unit-toggle" id="unitToggle">
+        <button type="button" class="unit-toggle__btn is-active" data-unit="C">°C</button>
+        <button type="button" class="unit-toggle__btn" data-unit="F">°F</button>
+      </div>
+      <button type="button" id="searchBtn" class="search__btn">Look up</button>
+      <button type="button" id="geoBtn" class="search__geo" title="Use my current location">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20" height="20" fill="currentColor" style="pointer-events:none;display:block;">
+    <path d="M12,11.5A2.5,2.5 0 0,1 9.5,9A2.5,2.5 0 0,1 12,6.5A2.5,2.5 0 0,1 14.5,9A2.5,2.5 0 0,1 12,11.5M12,2A7,7 0 0,0 5,9C5,14.25 12,22 12,22C12,22 19,14.25 19,9A7,7 0 0,0 12,2Z" />
+  </svg>
+</button>
+    </section>
+
+    <p id="statusMsg" class="status"></p>
+
+    <section id="currentBox" class="current hidden">
+      <div class="current__top">
+        <div>
+          <h2 id="currentCity" class="current__city">—</h2>
+          <p id="currentDate" class="current__date">—</p>
+        </div>
+        <div class="current__temp-wrap">
+          <span id="currentTemp" class="current__temp">—</span>
+          <span id="currentCond" class="current__cond">—</span>
+        </div>
+      </div>
+      <div class="current__grid">
+        <div class="stat">
+          <span class="stat__label">Feels like</span>
+          <span id="statFeels" class="stat__value">—</span>
+        </div>
+        <div class="stat">
+          <span class="stat__label">Humidity</span>
+          <span id="statHumidity" class="stat__value">—</span>
+        </div>
+        <div class="stat">
+          <span class="stat__label">Wind</span>
+          <span id="statWind" class="stat__value">—</span>
+        </div>
+        <div class="stat">
+          <span class="stat__label">UV index</span>
+          <span id="statUv" class="stat__value">—</span>
+        </div>
+        <div class="stat">
+          <span class="stat__label">Sunrise</span>
+          <span id="statSunrise" class="stat__value">—</span>
+        </div>
+        <div class="stat">
+          <span class="stat__label">Sunset</span>
+          <span id="statSunset" class="stat__value">—</span>
+        </div>
+      </div>
+    </section>
+
+    <section id="forecastBox" class="forecast hidden">
+      <h3 class="forecast__title">Coming days</h3>
+      <div id="forecastRow" class="forecast__row"></div>
+    </section>
+
+  </main>
+
+  <script src="index.js"></script>
+</body>
+</html>
