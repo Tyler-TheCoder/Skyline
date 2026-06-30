@@ -26,4 +26,3 @@ npm run build    # production build to dist/
 ## License
 
 MIT
-# Skyline
